@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ai-youtube-shorts-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3003:3003"
+    volumes:
+      - .:/app
+    environment:
+      - OPENAI_API=your_openai_api_key_here
+    command: python main.py
